@@ -38,124 +38,230 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="1238" height="816" alt="Screenshot 2025-09-29 152504" src="https://github.com/user-attachments/assets/854dbd5d-ad21-4b9d-88c2-b6fce17749a8" />
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT o.ord_no, o.purch_amt, o.ord_date, o.salesman_id
+FROM orders o
+JOIN salesman s ON o.salesman_id = s.salesman_id
+WHERE s.commission = (SELECT MAX(commission) FROM salesman);
 ```
 
 **Output:**
-
-![Output1](output.png)
+<img width="1009" height="463" alt="Screenshot 2025-09-29 152734" src="https://github.com/user-attachments/assets/c6b49b20-ff91-43ea-a692-6119f3c5b149" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="1133" height="458" alt="Screenshot 2025-09-29 152517" src="https://github.com/user-attachments/assets/9820428e-4dfb-405a-b8bd-ff12884accd0" />
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT
+  department_id,
+  department_name
+FROM
+  Departments
+WHERE
+ 
+  LENGTH(department_name) > (
+    
+    SELECT
+      AVG(LENGTH(department_name))
+    FROM
+      Departments
+  );
 ```
 
 **Output:**
-
-![Output2](output.png)
+<img width="560" height="405" alt="Screenshot 2025-09-29 152747" src="https://github.com/user-attachments/assets/0b9e78d0-04fb-472d-89ce-622fd0e419d4" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="930" height="498" alt="Screenshot 2025-09-29 152530" src="https://github.com/user-attachments/assets/49dc7080-cdc1-4427-99b7-0411fd62456b" />
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT
+  medication_id,
+  medication_name,
+  dosage
+FROM
+  Medications
+
+WHERE
+  dosage = (
+    
+    SELECT
+      MIN(dosage)
+    FROM
+      Medications
+  );
 ```
 
 **Output:**
-
-![Output3](output.png)
+<img width="893" height="386" alt="Screenshot 2025-09-29 152758" src="https://github.com/user-attachments/assets/a76908b5-b79d-4304-8dc6-f9739e6eb458" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="1055" height="547" alt="Screenshot 2025-09-29 152542" src="https://github.com/user-attachments/assets/84d60dc1-a7df-47a6-97fc-7f4a80eeddb3" />
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT
+  name
+FROM
+  customer
+
+WHERE
+
+  phone IN (
+
+    SELECT
+      phone
+    FROM
+      customer
+
+    GROUP BY
+      phone
+  
+    HAVING
+      COUNT(*) = 1
+  );
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="488" height="431" alt="Screenshot 2025-09-29 152806" src="https://github.com/user-attachments/assets/9ff3b020-388e-420d-a3a5-165992dc450a" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1079" height="516" alt="Screenshot 2025-09-29 152558" src="https://github.com/user-attachments/assets/8572478d-bd23-48d2-a01f-eb4558b73343" />
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT
+  name,
+  city
+FROM
+  customer
+
+WHERE
+ 
+  city IN (
+
+    SELECT
+      city
+    FROM
+      customer
+    WHERE
+      id IN (3, 7)
+  );
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="576" height="454" alt="Screenshot 2025-09-29 152818" src="https://github.com/user-attachments/assets/a2e64a13-7e08-4eaf-b085-c29be76f5d98" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="1013" height="725" alt="Screenshot 2025-09-29 152610" src="https://github.com/user-attachments/assets/f0672836-f5c7-43b8-9ca0-40c16c08055a" />
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT
+  customer_id,
+  cust_name,
+  city,
+  grade,
+  salesman_id
+FROM
+  customer
+
+WHERE
+  customer_id = (
+ 
+    SELECT
+      salesman_id
+    FROM
+      salesman
+    WHERE
+      name = 'Mc Lyon'
+  ) - 2001; 
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1229" height="299" alt="Screenshot 2025-09-29 152828" src="https://github.com/user-attachments/assets/146556ab-7c33-4c94-a867-574d36c3fc5d" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="930" height="739" alt="Screenshot 2025-09-29 152623" src="https://github.com/user-attachments/assets/8276e312-c150-4d55-9edb-6c88e2b07edc" />
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT
+  *
+FROM
+  CUSTOMERS
+
+WHERE
+ 
+  AGE < 30;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1195" height="564" alt="Screenshot 2025-09-29 152841" src="https://github.com/user-attachments/assets/abe3c730-3bb9-43ef-b369-d216ae43724a" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="886" height="619" alt="Screenshot 2025-09-29 152636" src="https://github.com/user-attachments/assets/2c3583db-c52d-4c51-8067-8ef4d4c6106a" />
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT
+  *
+FROM
+  CUSTOMERS
+
+WHERE
+  
+  ADDRESS = 'Delhi';
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1295" height="328" alt="Screenshot 2025-09-29 152852" src="https://github.com/user-attachments/assets/384a6d82-11f7-4f91-9c9e-9aa1fc915b0f" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1027" height="673" alt="Screenshot 2025-09-29 152700" src="https://github.com/user-attachments/assets/7cef3850-dd80-4d77-8088-61061e520c61" />
 
 ```sql
--- Paste your SQL code below for Question 9
+select commission from salesman
+where salesman_id in (select (salesman_id)
+from customer
+where city='Paris'
+);
 ```
 
 **Output:**
+<img width="332" height="310" alt="Screenshot 2025-09-29 152904" src="https://github.com/user-attachments/assets/5d5b30a7-d833-4217-a1b3-3fbd03e59219" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="1236" height="568" alt="Screenshot 2025-09-29 152715" src="https://github.com/user-attachments/assets/30ab7c18-4bee-4f12-b34a-0c43e5cfede8" />
 
 ```sql
--- Paste your SQL code below for Question 10
+select *
+from orders
+where salesman_id in (
+select salesman_id 
+from orders
+where customer_id=3007);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1226" height="417" alt="Screenshot 2025-09-29 152914" src="https://github.com/user-attachments/assets/9b99c568-b596-4f72-8aaa-dbd824027587" />
 
 
 ## RESULT
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
+<img width="1460" height="217" alt="Screenshot 2025-09-29 154131" src="https://github.com/user-attachments/assets/64e66963-6a55-4cd6-9db5-2a3a89585eb9" />
+
