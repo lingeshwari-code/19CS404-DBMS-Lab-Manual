@@ -46,124 +46,158 @@ Used to retrieve records from a table.
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
---
--- Paste Question 1 here
+--<img width="1005" height="297" alt="Screenshot 2025-09-29 140625" src="https://github.com/user-attachments/assets/f141766a-8e3a-4335-8213-d02b5b4c7029" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+UPDATE products
+SET sell_price=sell_price *1.10
+WHERE category='Bakery';
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="988" height="432" alt="Screenshot 2025-09-29 140827" src="https://github.com/user-attachments/assets/86bab376-b807-4486-af23-10442309a330" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="984" height="479" alt="Screenshot 2025-09-29 140657" src="https://github.com/user-attachments/assets/364df69e-3404-480b-a187-3f63b73beae6" />
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE suppliers
+SET address='58 Lakeview, Magnolia'
+WHERE supplier_id=5;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1109" height="313" alt="Screenshot 2025-09-29 140953" src="https://github.com/user-attachments/assets/56b3b4c7-4a71-4add-83ca-e9ca385df9fc" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="744" height="547" alt="Screenshot 2025-09-29 141057" src="https://github.com/user-attachments/assets/6fa83b9c-bee9-454e-93d1-11761028d216" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+DELETE FROM Doctors
+WHERE specialization IS NULL;
 ```
 
 **Output:**
+<img width="527" height="338" alt="Screenshot 2025-09-29 141120" src="https://github.com/user-attachments/assets/e8454254-a3cc-4641-abb7-5eca5dc2beed" />
 
-![Output3](output.png)
 
 **Question 4**
----
--- Paste Question 4 here
+---<img width="1196" height="458" alt="Screenshot 2025-09-29 141242" src="https://github.com/user-attachments/assets/9e3b43b8-5123-48ae-95a5-b229ee9a9ec5" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+DELETE FROM Customer
+WHERE CUST_COUNTRY NOT IN ('India','USA');
 ```
 
 **Output:**
-
-![Output4](output.png)
+<img width="1166" height="463" alt="Screenshot 2025-09-29 141304" src="https://github.com/user-attachments/assets/625a3bff-d2af-45bc-a0f2-373a9a89496e" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1173" height="472" alt="Screenshot 2025-09-29 141459" src="https://github.com/user-attachments/assets/c2177f5f-ca34-4f12-a596-37fde16737b9" />
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT customer_id,cust_name, city, grade,
+salesman_id
+FROM customer
+WHERE grade>100;
 ```
 
 **Output:**
+<img width="1164" height="369" alt="Screenshot 2025-09-29 141528" src="https://github.com/user-attachments/assets/249037c4-9ca9-4385-9275-2490a1065b2c" />
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="1086" height="533" alt="Screenshot 2025-09-29 141642" src="https://github.com/user-attachments/assets/5a5647f5-6a7b-4a53-a2a3-d4b925fbf045" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT salesman_id, name, city, commission
+FROM salesman
+WHERE commission BETWEEN 0.12 AND 0.14;
 ```
 
 **Output:**
+<img width="1012" height="430" alt="Screenshot 2025-09-29 141658" src="https://github.com/user-attachments/assets/64c86d21-1b88-4336-8497-1d11de3e72a8" />
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="1175" height="597" alt="Screenshot 2025-09-29 141845" src="https://github.com/user-attachments/assets/b6bde6cc-3e5e-4671-8458-dc9f4c46e687" />
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT 
+    id,
+    value2,
+    CASE
+       WHEN value2 < 10 THEN 'Small'
+       WHEN value2 BETWEEN 10 AND 50 THEN 'Medium'
+       WHEN value2>50 THEN 'Large'
+    END AS size_category
+FROM
+    calculations;
 ```
 
 **Output:**
+<img width="850" height="474" alt="Screenshot 2025-09-29 141857" src="https://github.com/user-attachments/assets/1dc4c832-435b-47bf-910b-0f44d795c731" />
 
-![Output7](output.png)
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1141" height="466" alt="Screenshot 2025-09-29 142017" src="https://github.com/user-attachments/assets/2ee23b54-7102-475f-849c-ffe1e4d81bd2" />
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT customer_id,cust_name, city, grade,
+salesman_id
+FROM customer
+WHERE city= 'New York' OR grade > 200;
 ```
 
 **Output:**
-
-![Output8](output.png)
+<img width="1129" height="370" alt="Screenshot 2025-09-29 142033" src="https://github.com/user-attachments/assets/635d266f-66bf-41ce-aa7e-ae93f1052ee0" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1181" height="539" alt="Screenshot 2025-09-29 142148" src="https://github.com/user-attachments/assets/dbc0eb45-eaea-45dd-ae7c-f5f71c616395" />
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT ord_no, purch_amt, ord_date, customer_id,
+salesman_id
+FROM orders
+WHERE purch_amt BETWEEN 500 AND 4000
+AND purch_amt NOT IN(948.50, 1983.43);
 ```
 
 **Output:**
+<img width="1164" height="323" alt="Screenshot 2025-09-29 142205" src="https://github.com/user-attachments/assets/787e37fa-61fd-40ea-9a43-9c2e454fc534" />
 
-![Output9](output.png)
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="890" height="505" alt="Screenshot 2025-09-29 142433" src="https://github.com/user-attachments/assets/fe391a4e-892b-4c6d-83eb-be629b1d5f87" />
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT
+   first_name,
+   last_name,
+   CAST(julianday(discharge_date)-
+julianday(admission_date)AS INTEGER)+1.0 AS no_of_days
+FROM
+   patients
+WHERE
+   julianday(discharge_date) - julianday(admission_date)> 3;
 ```
 
 **Output:**
-
-![Output10](output.png)
+<img width="776" height="326" alt="Screenshot 2025-09-29 142450" src="https://github.com/user-attachments/assets/583de075-b114-4d5f-9232-0f3e32f5c546" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
